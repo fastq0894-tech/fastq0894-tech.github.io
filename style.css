@@ -1,0 +1,98 @@
+/* Tawlah web pages: the game's Diwaniya colours (smoked oud, walnut, brass, ivory). */
+:root {
+  --bg: #16110D;
+  --wall: #2A1F17;
+  --panel: #231A13;
+  --brass: #C9A45C;
+  --brass-hi: #E6C98A;
+  --text: #F3EAD8;
+  --text-2: #B8AC98;
+  --muted: #8F8574;
+  --line: rgba(201, 164, 92, 0.28);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 50% 0%, #2A1F17 0%, var(--bg) 55%, #0E0A07 100%) fixed, var(--bg);
+  color: var(--text);
+  font-family: "IBM Plex Sans", "IBM Plex Sans Arabic", -apple-system, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+a { color: var(--brass-hi); text-underline-offset: 3px; }
+a:hover { color: #FFF0C6; }
+
+.page { max-width: 780px; margin: 0 auto; padding: 28px 16px 64px; }
+
+header.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  padding-bottom: 18px; margin-bottom: 26px; border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: baseline; gap: 12px; text-decoration: none; color: var(--brass-hi); }
+.brand .ar { font-family: "Reem Kufi", "IBM Plex Sans Arabic", sans-serif; font-size: 30px; font-weight: 700; line-height: 1; }
+.brand .en { font-family: "Cormorant Garamond", Georgia, serif; font-size: 20px; letter-spacing: 0.32em; text-transform: uppercase; color: var(--brass); }
+
+nav.lang { display: flex; gap: 8px; }
+nav.lang a, .pill {
+  display: inline-block; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px;
+  text-decoration: none; color: var(--text-2); font-size: 14px; background: rgba(42, 31, 23, 0.6);
+}
+nav.lang a:hover { color: var(--text); border-color: var(--brass); }
+
+h1, h2, h3 { color: var(--brass-hi); line-height: 1.25; }
+h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; font-size: 38px; margin: 0 0 6px; }
+h2 { font-size: 19px; margin: 30px 0 8px; }
+h3 { font-size: 16px; margin: 18px 0 4px; color: var(--text); }
+[lang="ar"] h1 { font-family: "Reem Kufi", "IBM Plex Sans Arabic", sans-serif; font-weight: 700; font-size: 32px; }
+[lang="ar"] { font-family: "IBM Plex Sans Arabic", "IBM Plex Sans", sans-serif; }
+
+p, li { color: var(--text); }
+.meta { color: var(--text-2); font-size: 14px; margin: 0 0 4px; }
+.lead { color: var(--text-2); }
+ul { padding-inline-start: 22px; margin: 6px 0; }
+li { margin: 4px 0; }
+
+section.lang-block {
+  background: linear-gradient(180deg, rgba(53, 40, 30, 0.55), rgba(35, 26, 19, 0.55));
+  border: 1px solid var(--line); border-radius: 18px; padding: 26px 22px; margin-bottom: 28px;
+}
+
+.card {
+  border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; margin: 12px 0;
+  background: rgba(22, 17, 13, 0.55);
+}
+.card h3 { margin-top: 0; }
+
+.contact {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 16px 18px; margin: 14px 0 6px;
+  border-radius: 14px; border: 1px solid var(--brass); background: rgba(201, 164, 92, 0.08);
+}
+.contact .email { font-size: 18px; font-weight: 600; color: var(--brass-hi); word-break: break-all; }
+
+.links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.button {
+  display: inline-block; padding: 11px 20px; border-radius: 12px; text-decoration: none; font-weight: 600;
+  color: #1D140B; background: linear-gradient(180deg, #EBD197 0%, var(--brass) 58%, #A8843F 100%);
+}
+.button:hover { color: #1D140B; filter: brightness(1.06); }
+.button.quiet { color: var(--text); background: rgba(42, 31, 23, 0.8); border: 1px solid var(--line); }
+
+footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+footer a { color: var(--text-2); }
+
+/* Keep English names, emails and numbers in the right order inside Arabic text. */
+bdi, .ltr { unicode-bidi: isolate; }
+.ltr { direction: ltr; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 31px; }
+  [lang="ar"] h1 { font-size: 27px; }
+  section.lang-block { padding: 20px 16px; }
+  .brand .ar { font-size: 26px; }
+  .brand .en { font-size: 16px; }
+}
